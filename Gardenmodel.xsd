@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:gardenmodel="http://www.gardenmodel.de/gardenmodel" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.gardenmodel.de/gardenmodel" elementFormDefault="qualified">
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/dynamicFeature.xsd"/>
+  <!-- Garden type defintion  -->
+  <element name="Garden" type="gardenmodel:GardenType"/>
+  <complexType name="GardenType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element ref="gardenmodel:layerMember" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="layerMember">
+    <complexType>
+      <complexContent>
+        <extension base="gml:AbstractFeatureMemberType">
+          <sequence>
+            <element ref="gardenmodel:_GardenLayer"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <!-- Layertypedefinitions-->
+  <element name="_GardenLayer" type="gardenmodel:AbstractGardenLayerType" abstract="true" substitutionGroup="gml:AbstractFeature"/>
+  <complexType name="AbstractGardenLayerType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType"/>
+    </complexContent>
+  </complexType>
+  <element name="VectorLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <complexType name="VectorLayerType">
+    <complexContent>
+      <extension base="gardenmodel:AbstractGardenLayerType">
+        <sequence>
+          <element name="layername" type="string"/>
+          <element ref="gardenmodel:geoobjectMember" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="geoobjectMember">
+    <complexType>
+      <complexContent>
+        <extension base="gml:AbstractFeatureMemberType">
+          <sequence>
+            <element ref="gardenmodel:_Geoobject"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="RasterLayer" type="gardenmodel:RasterLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <complexType name="RasterLayerType">
+    <complexContent>
+      <extension base="gardenmodel:AbstractGardenLayerType">
+        <sequence>
+          <element name="layername" type="string"/>
+          <element name="x_size" type="integer"/>
+          <element name="y_size" type="integer"/>
+          <element name="bitmap" type="gml:AssociationRoleType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="PlantLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <element name="TopologicalMap" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <element name="GardenConstructsLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <element name="GroundLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <element name="ReminderLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <element name="RobotLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <element name="SensorLayer" type="gardenmodel:VectorLayerType" substitutionGroup="gardenmodel:_GardenLayer"/>
+  <!-- Definition of different Vectorobjects -->
+  <!-- =======Abstract Types========-->
+  <element name="_Geoobject" type="gardenmodel:AbstractGeoobjectType" abstract="true" substitutionGroup="gml:AbstractFeature"/>
+  <complexType name="AbstractGeoobjectType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType"/>
+    </complexContent>
+  </complexType>
+  <element name="Point" type="gardenmodel:PointType" substitutionGroup="gardenmodel:_Geoobject"/>
+  <complexType name="PointType">
+    <complexContent>
+      <extension base="gardenmodel:AbstractGeoobjectType">
+        <sequence>
+          <element name="center" type="gml:PointPropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="Line" type="gardenmodel:LineType" substitutionGroup="gardenmodel:_Geoobject"/>
+  <complexType name="LineType">
+    <complexContent>
+      <extension base="gardenmodel:AbstractGeoobjectType">
+        <sequence>
+          <element name="line" type="gml:CurvePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="Polygon" type="gardenmodel:PolygonType" substitutionGroup="gardenmodel:_Geoobject"/>
+  <complexType name="PolygonType">
+    <complexContent>
+      <extension base="gardenmodel:AbstractGeoobjectType">
+        <sequence>
+          <element name="surface" type="gml:SurfacePropertyType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <!-- Application specific Types -->
+  <element name="Plant" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PointType">
+          <sequence>
+            <element name="plantName" type="string" minOccurs="0"/>
+            <element name="plantType" type="string" minOccurs="0"/>
+            <element name="timeLine" type="gml:HistoryPropertyType" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="TopologicalNode" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PointType">
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="TopologicalEdge" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:LineType">
+          <sequence>
+            <element name="node1" type="gardenmodel:TopologicalNodePropertyType"/>
+            <element name="node2" type="gardenmodel:TopologicalNodePropertyType"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <complexType name="TopologicalNodePropertyType">
+    <complexContent>
+      <extension base="gml:FeaturePropertyType"/>
+    </complexContent>
+  </complexType>
+  <element name="ActionPoint" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PointType">
+          <sequence>
+            <element name="action" type="string" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="Building" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PolygonType">
+          <sequence>
+            <element name="buildingName" type="string" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="GardenObjectCircle" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PointType">
+          <sequence>
+            <element name="gardenObjectName" type="string" minOccurs="0"/>
+            <element name="width" type="decimal" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="GardenObjectPolygon" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PolygonType">
+          <sequence>
+            <element name="gardenObjectName" type="string" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="Ground" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PolygonType">
+          <sequence>
+            <element name="groundType" type="string" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="Patch" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PolygonType">
+</extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="Rail" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:LineType">
+          <sequence>
+            <element name="material" type="string" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="Reminder" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PointType">
+          <sequence>
+            <element name="description" type="string" minOccurs="0"/>
+            <element name="date" type="dateTime" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="RFIDLandmark" substitutionGroup="gardenmodel:_Geoobject">
+    <complexType>
+      <complexContent>
+        <extension base="gardenmodel:PointType">
+          <sequence>
+            <element name="rfidIdentifier" type="integer" minOccurs="0"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+  <!-- Time Values -->
+  <element name="PlantTimeValue" substitutionGroup="gml:AbstractTimeSlice">
+    <complexType>
+      <complexContent>
+        <extension base="gml:AbstractTimeSliceType">
+          <sequence>
+            <element name="stateDescription" type="string"/>
+            <element name="height" type="decimal"/>
+            <element name="width" type="decimal"/>
+          </sequence>
+        </extension>
+      </complexContent>
+    </complexType>
+  </element>
+</schema>

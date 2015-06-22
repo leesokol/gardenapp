@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Default">#AA000000</color>
+    <color name="ActionPoint">#AAE1EE36</color>
+    <color name="Building">#AA947100</color>
+    <color name="GardenObjectCircle">#AA8B2D14</color>
+    <color name="GardenObjectPolygon">#AA8B2D14</color>
+    <color name="Ground">#AA6B6B6B</color>
+    <color name="Ground_GRASS">#AA28BC43</color>
+    <color name="Ground_WATER">#AA2881BC</color>
+    <color name="Ground_PAVEMENT">#AA75756D</color>
+    <color name="Ground_SOIL">#AA98813D</color>
+    <color name="Ground_SAND">#AAE9E723</color>
+    <color name="Ground_ROBOT_ACCESSABLE">#AA00FF10</color>
+    <color name="Ground_ROBOT_NOT_ACCESSABLE">#AAFF0020</color>
+    <color name="Patch">#AA2AFF00</color>
+    <color name="Plant">#9d0a7920</color>
+    <color name="Rail">#AA989898</color>
+    <color name="RFIDLandmark">#AA9B0BDF</color>
+    <color name="TopologicalEdge">#AA2939E6</color>
+    <color name="TopologicalNode">#AAFFF700</color>
+    <color name="Reminder">#aaff6400</color>
+</resources>

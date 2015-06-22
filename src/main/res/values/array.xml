@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="layer_types">
+        <item>"VectorLayer"</item>
+        <item>"PlantLayer"</item>
+        <item>"Topological Map"</item>
+        <item>"SensorLayer"</item>
+        <item>"GroundLayer"</item>
+        <item>"RobotLayer"</item>
+        <item>"GardenConstructsLayer"</item>
+        <item>"SatelliteLayer"</item>
+        <item>"ReminderLayer"</item>
+    </array>
+    
+    <array name="layer_long_click">
+        <item>"Delete Layer"</item>
+        <item>"Move Layer Up"</item>
+        <item>"Move Layer Down"</item>
+    </array>
+
+    <array name="object_long_click">
+        <item>"Delete Object"</item>
+        <item>"Move Object Up"</item>
+        <item>"Move Object Down"</item>
+        <item>"Change Position"</item>
+    </array>
+
+    <array name="plant_types">
+        <item>"Basil"</item>
+        <item>"Tomato"</item>
+        <item>"Potato"</item>
+    </array>
+
+    <array name="plant_neighborhoods">
+        <item>"Basil|Tomato"</item>
+        <item>"Tomato|Basil"</item>
+    </array>
+
+</resources>

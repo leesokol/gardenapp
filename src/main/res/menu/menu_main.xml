@@ -1,0 +1,97 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/addPoint"
+        android:icon="@drawable/addpoint"
+        android:showAsAction="ifRoom"
+        android:title="@string/addPoint" />
+    <item
+        android:id="@+id/addLine"
+        android:icon="@drawable/addline"
+        android:showAsAction="ifRoom"
+        android:title="@string/addLine" />
+    <item
+        android:id="@+id/addPolygon"
+        android:icon="@drawable/addpolygon"
+        android:showAsAction="ifRoom"
+        android:title="@string/addPolygon" />
+    <item
+        android:id="@+id/addPlant"
+        android:icon="@drawable/plant"
+        android:showAsAction="ifRoom"
+        android:title="@string/addPlant" />
+    <item
+        android:id="@+id/addTopologicalNode"
+        android:icon="@drawable/toponode"
+        android:showAsAction="ifRoom"
+        android:title="@string/addTopologicalNode" />
+    <item
+        android:id="@+id/addTopologicalEdge"
+        android:icon="@drawable/topoedge"
+        android:showAsAction="ifRoom"
+        android:title="@string/addTopologicalEdge" />
+    <item
+        android:id="@+id/advices"
+        android:showAsAction="never"
+        android:title="@string/action_advices" />
+    <item
+        android:id="@+id/patch"
+        android:icon="@drawable/patch"
+        android:showAsAction="ifRoom"
+        android:title="@string/addPatch"/>
+    <item
+        android:id="@+id/actionpoint"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/actionpoint"
+        android:title="@string/addActionPoint"/>
+    <item
+        android:id="@+id/building"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/building"
+        android:title="@string/addBuilding"/>
+    <item
+        android:id="@+id/gardenObjectCircle"
+        android:icon="@drawable/gardenobjectcircle"
+        android:showAsAction="ifRoom"
+        android:title="@string/addGardenObjectCircle"/>
+    <item
+        android:id="@+id/gardenObjectPolygon"
+        android:icon="@drawable/gardenobjectpolygon"
+        android:showAsAction="ifRoom"
+        android:title="@string/addGardenObjectPolygon"/>
+    <item
+        android:id="@+id/ground"
+        android:icon="@drawable/ground"
+        android:showAsAction="ifRoom"
+        android:title="@string/addGround"/>
+    <item
+        android:id="@+id/Landmark"
+        android:icon="@drawable/landmark"
+        android:showAsAction="always"
+        android:title="@string/addLandmark"/>
+    <item
+        android:id="@+id/LandmarkPolygon"
+        android:icon="@drawable/landmarkpolygon"
+        android:showAsAction="ifRoom"
+        android:title="@string/addLandmarkPolygon"/>
+    <item
+        android:id="@+id/Rail"
+        android:icon="@drawable/rails"
+        android:showAsAction="ifRoom"
+        android:title="@string/addRail"/>
+    <item
+        android:id="@+id/Sensor"
+        android:icon="@drawable/sensor"
+        android:showAsAction="always"
+        android:title="@string/addSensor"/>
+    <item
+        android:id="@+id/Reminder"
+        android:icon="@android:drawable/ic_popup_reminder"
+        android:showAsAction="ifRoom"
+        android:title="@string/addReminder"/>
+    <item android:id="@+id/exportToXML"
+        android:showAsAction="never"
+        android:title="@string/exportXML"/>
+    <item android:id="@+id/importFromXML"
+        android:showAsAction="never"
+        android:title="@string/importXML"/>
+</menu>

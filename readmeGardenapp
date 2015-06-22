@@ -1,0 +1,9 @@
+Laden Sie die Datei germany.map von http://download.mapsforge.org/maps/europe/ herunter und
+speichere Sie diese in dem externen Speicher des Tablets oder der Emulator-Partition
+(/storage/emulated/0 oder mnt/sdcard etc.).
+
+Download the file germany.map from http://download.mapsforge.org/maps/europe/ and save it in the
+tablet's or emulator's external storage (/storage/emulated/0 oder mnt/sdcard etc.).
+
+Installation
+Import Project in Android Studio

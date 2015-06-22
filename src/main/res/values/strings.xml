@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GardenApp</string>
+    <string name="title_activity_main">GardenApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="addPoint">Add Point</string>
+    <string name="check">Confirm</string>
+    <string name="decline">Cancel</string>
+    <string name="title_action_mode_addPoint">Add Point</string>
+    <string name="title_action_mode_addLine">Add Line</string>
+    <string name="title_action_mode_addPolygon">Add Polygon</string>
+    <string name="addLine">Add Line</string>
+    <string name="addPolygon">Add Polygon</string>
+    <string name="undo">Undo</string>
+    <string name="add_layer">Add new Layer</string>
+    <string name="choose_layer_type">Choose layer type</string>
+    <string name="layername_hint">Layername</string>
+    <string name="layername_check">Accept</string>
+    <string name="layername_cancel">Cancel</string>
+    <string name="layer_text_notgiven">Layername can not be given!</string>
+    <string name="action_switch_object">Switch Mode</string>
+    <string name="addPlant">Add Plant</string>
+    <string name="addTopologicalNode">Add Topological Node</string>
+    <string name="addTopologicalEdge">Add Topological Edge</string>
+    <string name="addBoundaryBox">Add Boundary Box</string>
+    <string name="action_advices">Advices</string>
+    <string name="addPatch">Add Garden Patch</string>
+    <string name="addActionPoint">Add Action Point</string>
+    <string name="addBuilding">Add Building</string>
+    <string name="addGardenObjectCircle">Add Circle Graden Object</string>
+    <string name="addGardenObjectPolygon">Add Polygon Garden Object</string>
+    <string name="addGround">Add Ground</string>
+    <string name="addLandmark">Add Landmark</string>
+    <string name="addLandmarkPolygon">Add Polygon Landmark</string>
+    <string name="addRail">Add Rail</string>
+    <string name="addSensor">Add Sensor</string>
+    <string name="addReminder">Add Reminder</string>
+    <string name="exportXML">Export (XML)</string>
+    <string name="addLandmarkRFID">RFID Landmark</string>
+    <string name="addDummySensor">Dummy Sensor</string>
+    <string name="importXML">Import(XML)</string>
+</resources>
